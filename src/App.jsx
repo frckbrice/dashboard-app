@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import Layout from "./components/Layout";
+// import CreateProfile from "./components/CreateProfile";
+import CreateProfile from "./components/forms/CreateProfile";
+import ViewProfile from "./components/ViewProfile";
+import EditProfile from "./components/forms/EditProfile";
+import { Profile } from "./components/useLocacalStorage";
+import { useLocalStorage } from "./components/useLocacalStorage";
+import BaseForm from "./components/forms/logon";
 
 function App() {
+  const { value, setValue } = useLocalStorage("form");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+      
+      <Routes>
+        
+        <Route path="/" element={<Layout />} index />
+        <Route
+          path="/createprofile"
+          element={
+            <Layout>
+              <CreateProfile />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/createprofile/viewprofile"
+          element={
+            <Layout>
+              <ViewProfile />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/createprofile/viewprofile/editprofile"
+          element={
+            <Layout>
+              <EditProfile />
+            </Layout>
+          }
+        />
+      </Routes>
     </div>
   );
 }

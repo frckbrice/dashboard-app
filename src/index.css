@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Space+Grotesk:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply w-full border border-blue-300 rounded-lg px-2 py-2 focus:ring-purple-600 focus:border-transparent focus:outline-none placeholder-gray-400 text-base shadow-md text-gray-700 ;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.inp {
+  @apply w-full border border-blue-300 rounded-lg px-2 py-2 focus:ring-purple-600 focus:border-transparent focus:outline-none placeholder-gray-400 text-base shadow-md text-gray-700 ;
+}
+
+.error {
+  @apply border-red-500 font-semibold;
+}
+
+.btn {
+  @apply w-full px-4 py-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 transition ease-in text-center text-base font-semibold shadow-md rounded-lg focus:outline-none text-white;
+}
+
+.img {
+  @apply w-24 h-28 md:w-48 md:h-auto md:rounded rounded-full mx-auto;
+}
+
+.btn:disabled {
+  @apply bg-gray-400;
+}
+
+.profile {
+  @apply bg-white  w-96 h-1/2 rounded-md shadow-black bg-sky-300
+   overflow-hidden
+}
+
+.upper-container {
+  @apply h-28 bg-gradient-to-r from-purple-200
+   to-pink-300
+}
+
+.image-container {
+  @apply h-28 bg-white w-28 rounded-md rounded-full p-5 transform 
+}
+
+/* translate-x-95 translate-y-45 */
+
+.img {
+  @apply border-2 h-32 w-32
+}
+
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', #8e00b9);
+}
+
+.lower-container {
+@apply mt-14 h-28  text-center items-start;
+}
+
+h3 {
+  @apply  font-semibold text-sm items-start;
+}
+
+.btn-p {
+  @apply m-4 mt-0  font-bold bg-white border-2 
+  p-2 rounded-lg 
+}
+
+.btn-p:hover {
+  @apply   border-transparent text-white bg-gradient-to-l from-purple-500 to-pink-500
 }
